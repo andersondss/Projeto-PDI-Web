@@ -11,4 +11,28 @@
 		non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	</p>
 
+	<img src="{{ image.url }}" alt="{{ image.name }}">
+
+	<div class="pure-g-r content-ribbon">
+		<div class="pure-u-1">
+			<h2>Faça o upload da imagem</h2>
+			<form class="pure-form pure-form-stacked" action="{% url 'core:codification' %}" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<fieldset>
+					{{ form.non_field_errors }}
+					{% for field in form %}
+						<div class="pure-control-group">
+							{{ field.label_tag }}
+							{{ field }}
+							{{ field.errors }}
+						</div>
+					{% endfor %}
+					<div class="pure-controls">
+						<button type="submit" class="pure-button pure-button-primary">Enviar</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
 {% endblock %}

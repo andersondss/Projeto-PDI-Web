@@ -1,2 +1,5 @@
 .project
 .pydevproject
+.settings/
+db.sqlite3
+upload/
