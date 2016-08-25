@@ -1,6 +1,6 @@
 from django import forms
 from django.conf import settings
-from .models import Codification
+from .models import Codification, Segmentation
 
 
 class FormCodification(forms.ModelForm):
@@ -13,4 +13,17 @@ class FormCodification(forms.ModelForm):
 
     class Meta:
         model = Codification
+        fields = ["description", "image"]
+
+
+class FormSegmentation(forms.ModelForm):
+
+    def save(self, commit=True):
+        segmentation = super(FormSegmentation, self).save(commit=False)
+        if commit:
+            segmentation.save()
+        return segmentation
+
+    class Meta:
+        model = Segmentation
         fields = ["description", "image"]
