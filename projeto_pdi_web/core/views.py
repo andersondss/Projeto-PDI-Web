@@ -1,8 +1,16 @@
+import os
+
+import Image
 import cv2
-from django.shortcuts import render, redirect
-from projeto_pdi_web.core.forms import FormCodification
+import numpy as np
 from matplotlib import pyplot as plt
+from django.shortcuts import render, redirect
+from django.conf import settings
+
 from projeto_pdi_web.core.models import Codification
+from projeto_pdi_web.core.forms import FormCodification
+from projeto_pdi_web.common.orb import run_orb
+
 
 def home(request):
     return render(request, "home.html")
@@ -15,9 +23,25 @@ def codification(request):
     if request.method == "POST":
         form = FormCodification(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            processSIFT(request.FILES["image"])
-            # return redirect("core:home")
+            form = form.save()
+            codification = Codification.objects.all().order_by('-id')[0]
+            img = cv2.imread("{0}/{1}".format(settings.MEDIA_ROOT, codification.image.name))
+            # print type(img)
+            # print img.shape
+            # plt.imshow(img, cmap='gray')
+            # plt.show()
+            kp, descriptors, img_keypoints = run_orb(img)
+            # plt.imshow(img_keypoints, cmap='gray')
+            # plt.show()
+            print "{0}/{1}".format(settings.MEDIA_ROOT, "upload/codification/output/img.png")
+            cv2.imwrite("{0}/{1}".format(settings.MEDIA_ROOT, "upload/codification/output/img.png"),
+                        img_keypoints)
+            # context["keypoints"] = kp
+            # context["descriptors"] = descriptors
+            print codification.image
+            context["image"] = codification.image
+            context["image_cod"] = "media/upload/codification/output/img.png"
+            return render(request, "codificacao_sucesso.html", context)
     else:
         form = FormCodification()
 
@@ -31,12 +55,3 @@ def similarity(request):
 
 def segmentation(request):
     return render(request, "segmentacao.html")
-
-
-def processSIFT(image):
-
-    print "upload/codification/"+image.name
-    img = cv2.imread("upload/codification/"+image.name, 0)
-    
-    plt.imshow(img, cmap='gray')
-    plt.show()

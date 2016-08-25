@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<h1 class="content-subhead">Módulo de Codificação (Módulo I)</h1>
+	<p>
+		• Entrada: Uma imagem digital
+	</p>
+	<p>
+		• Saída: Keypoints e descritores da imagem
+	</p>
+
+	<div class="pure-g-r content-ribbon">
+		<div class="pure-u-1">
+			<h2>Imagem original</h2>
+			<img src="{{ image.url }}" style="width: 700px;">
+			
+			<h2>Imagem com ORB</h2>
+			<img src="{{ image_cod }}" style="width: 700px;">
+		</div>
+	</div>
+
+{% endblock %}
+
+

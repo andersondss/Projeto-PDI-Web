@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.conf import settings
 
+
 admin.autodiscover()
 
 urlpatterns = patterns('projeto_pdi_web.core.views',
@@ -11,3 +12,5 @@ urlpatterns = patterns('projeto_pdi_web.core.views',
                        url(r'^similariedade-formas$', 'similarity', name='similarity'),
                        url(r'^segmentacao$', 'segmentation', name='segmentation'),
                        )
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
