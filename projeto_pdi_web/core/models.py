@@ -22,6 +22,12 @@ class Codification(models.Model):
 
 class Segmentation(models.Model):
 
+    concept_choice = (
+        (0, "Gato"),
+        (1, "Cavalo"),
+        (2, "Avião")
+    )
+    concept = models.IntegerField("Conceito", choices=concept_choice, default=0, blank=False)
     image = models.ImageField(upload_to="upload/segmentation/input/", verbose_name="Imagem", blank=False)
     image_cod = models.ImageField(upload_to="upload/segmentation/output/", verbose_name="Imagem", blank=True)
     description = models.CharField("Descrição", max_length=50, blank=True)
