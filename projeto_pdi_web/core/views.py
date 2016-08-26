@@ -10,6 +10,7 @@ from django.conf import settings
 from projeto_pdi_web.core.models import Codification, Segmentation
 from projeto_pdi_web.core.forms import FormCodification, FormSegmentation
 from projeto_pdi_web.common.lib_codification import run_orb
+from projeto_pdi_web.common.lib_segmentation import segmentation_slic
 
 
 def home(request):
