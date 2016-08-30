@@ -12,14 +12,23 @@
 
 	<div class="pure-g-r content-ribbon">
 		<div class="pure-u-1">
+
 			<h2>Imagem original</h2>
 			<img src="{{ image.url }}" style="width: 700px;">
-			
+
 			<h2>Imagem com ORB</h2>
 			<img src="{{ image_cod }}" style="width: 700px;">
+			<br>
+
+			{% for keypoint in keypoints %}
+				{{ keypoint.pt }}
+			{% endfor %}
+
+			{% for descriptor in descriptors %}
+				<p> {{ descriptor }} </p>
+			{% endfor %}
+
 		</div>
 	</div>
 
 {% endblock %}
-
-

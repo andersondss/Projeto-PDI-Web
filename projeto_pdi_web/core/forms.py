@@ -13,7 +13,7 @@ class FormCodification(forms.ModelForm):
 
     class Meta:
         model = Codification
-        fields = ["description", "image"]
+        fields = ["image"]
 
 
 class FormSegmentation(forms.ModelForm):
@@ -26,4 +26,4 @@ class FormSegmentation(forms.ModelForm):
 
     class Meta:
         model = Segmentation
-        fields = ["description", "image"]
+        fields = ["image"]

@@ -27,20 +27,13 @@ def codification(request):
             form = form.save()
             codification = Codification.objects.all().order_by('-id')[0]
             img = cv2.imread("{0}/{1}".format(settings.MEDIA_ROOT, codification.image.name))
-            # print type(img)
-            # print img.shape
-            # plt.imshow(img, cmap='gray')
-            # plt.show()
             kp, descriptors, img_keypoints = run_orb(img)
-            # plt.imshow(img_keypoints, cmap='gray')
-            # plt.show()
             print "{0}/{1}".format(settings.MEDIA_ROOT, "upload/codification/output/img.png")
             cv2.imwrite("{0}/{1}".format(settings.MEDIA_ROOT, "upload/codification/output/img.png"),
                         img_keypoints)
-            # context["keypoints"] = kp
-            # context["descriptors"] = descriptors
-            print codification.image
             context["image"] = codification.image
+            context["keypoints"] = kp
+            context["descriptors"] = descriptors
             context["image_cod"] = "media/upload/codification/output/img.png"
             return render(request, "codificacao_sucesso.html", context)
     else:
