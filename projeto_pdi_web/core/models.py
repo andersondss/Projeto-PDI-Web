@@ -38,3 +38,18 @@ class Segmentation(models.Model):
         verbose_name = "Segmentação"
         verbose_name_plural = "Segmentações"
         ordering = ["created_at"]
+
+
+class ShapeSimilarity(models.Model):
+
+    first_image = models.ImageField(upload_to="upload/similarity/input/", verbose_name="Primeira Imagem", blank=False)
+    second_image = models.ImageField(upload_to="upload/similarity/input/", verbose_name="Segunda Imagem", blank=False)
+    created_at = models.DateTimeField("Criada em", auto_now_add=True)
+
+    def __str__(self):
+        return self.created_at
+
+    class Meta:
+        verbose_name = "Similaridade"
+        verbose_name_plural = "Similaridades"
+        ordering = ["created_at"]
