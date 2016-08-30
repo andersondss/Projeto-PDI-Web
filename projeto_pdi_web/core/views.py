@@ -9,10 +9,11 @@ from django.conf import settings
 import matplotlib.image as mpimg
 import scipy.misc
 
-from projeto_pdi_web.core.models import Codification, Segmentation
-from projeto_pdi_web.core.forms import FormCodification, FormSegmentation
+from projeto_pdi_web.core.models import Codification, Segmentation, ShapeSimilarity
+from projeto_pdi_web.core.forms import FormCodification, FormSegmentation, FormShapeSimilarity
 from projeto_pdi_web.common.lib_codification import run_orb
 from projeto_pdi_web.common.lib_segmentation import segmentation_slic
+from projeto_pdi_web.common.lib_similarity import shape_similarity
 
 
 def home(request):
@@ -78,4 +79,25 @@ def segmentation(request):
 
 
 def similarity(request):
-    return render(request, "similariedade.html")
+    template_name = "similariedade_forma.html"
+    context = {}
+    if request.method == "POST":
+        form = FormShapeSimilarity(request.POST, request.FILES)
+        if form.is_valid():
+            form = form.save()
+            shape_similarity = ShapeSimilarity.objects.all().order_by('-id')[0]
+            first_img = mpimg.imread("{0}/{1}".format(settings.MEDIA_ROOT, shape_similarity.first_image.name))
+            second_img = mpimg.imread("{0}/{1}".format(settings.MEDIA_ROOT, shape_similarity.second_image.name))
+            match_images, rate_shape_similarity = shape_similarity()
+            scipy.misc.imsave("{0}/{1}".format(settings.MEDIA_ROOT, "upload/similarity/shape/output/img_match.png"),
+                              match_images)
+            context["first_image"] = shape_similarity.first_image
+            context["second_image"] = shape_similarity.second_image
+            context["img_match"] = "media/upload/similarity/shape/output/img_match.png"
+            context["rate_shape_similarity"] = rate_shape_similarity
+            return render(request, "similaridade_forma_sucesso.html", context)
+    else:
+        form = FormSegmentation()
+
+    context["form"] = form
+    return render(request, template_name, context)
