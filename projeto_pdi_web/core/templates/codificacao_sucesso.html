@@ -20,9 +20,13 @@
 			<img src="{{ image_cod }}" style="width: 700px;">
 			<br>
 
+			<h2>Keypoints</h2>
+
 			{% for keypoint in keypoints %}
 				{{ keypoint.pt }}
 			{% endfor %}
+
+			<h2>Descriptors</h2>
 
 			{% for descriptor in descriptors %}
 				<p> {{ descriptor }} </p>
