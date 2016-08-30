@@ -26,4 +26,4 @@ class FormSegmentation(forms.ModelForm):
 
     class Meta:
         model = Segmentation
-        fields = ["image"]
+        fields = ["image", "concept"]

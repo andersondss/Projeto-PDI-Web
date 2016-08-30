@@ -11,9 +11,9 @@ from scipy.stats.stats import pearsonr
 
 def segmentation_slic(img, conceito):
 
-    segments_slic = slic(img, n_segments=2000, compactness=10.0, sigma=3.0)
-    plt.imshow(mark_boundaries(img, segments_slic))
-    plt.show()
+    segments_slic = slic(img, n_segments=200, compactness=10.0, sigma=3.0)
+    # plt.imshow(mark_boundaries(img, segments_slic))
+    # plt.show()
 
     features = np.zeros([len(np.unique(segments_slic)), 4])
     image_seg = np.array(img)
@@ -41,7 +41,7 @@ def segmentation_slic(img, conceito):
         KURTOSIS = kurtosis(regionR) + kurtosis(regionG) + kurtosis(regionB)
 
         imgFeatures = [MEAN, VARIANCE, SKEWNESS, KURTOSIS]
-        features = np.load('SpaceFeature/FEATURES_' + str(conceito) + '.npy')
+        features = np.load('projeto_pdi_web/common/space_feature/features_' + str(conceito+1) + '.npy')
         pearson = []
         for m in range(size(features, 0)):
             amostra = features[m, 0:4]
@@ -73,4 +73,6 @@ def segmentation_slic(img, conceito):
     plt.subplot(133), plt.imshow(a, cmap='gray')
     plt.title('OUTPUT'), plt.xticks([]), plt.yticks([])
 
-    plt.show()
+    # plt.show()
+
+    return mark_boundaries(img, segments_slic), image_seg, a
