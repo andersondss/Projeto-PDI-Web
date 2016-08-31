@@ -2,13 +2,26 @@
 
 {% block content %}
 
-	<h1 class="content-subhead">Módulo de Codificação (Módulo I)</h1>
-	<p>
-		• Entrada: Uma imagem digital
-	</p>
-	<p>
-		• Saída: Keypoints e descritores da imagem
-	</p>
+	<h2 class="content-subhead">Módulo de Codificação (Módulo I)</h2>
+	<div class="my_input" style=" border: 3px solid #1f8dd6;">
+		<div class="inf_input" style="position: relative;margin-left: 25px;">
+			<p>
+				<strong>Entradas</strong>
+				<ul>
+					<li> Uma imagem digital </li>
+				</ul>
+			</p>
+		</div>
+		<div class="inf_input" style="position: relative;margin-left: 25px;">
+			<p>
+				<strong>Saídas</strong>
+				<ul>
+					<li> Keypoints da imagem </li>
+					<li> Descritores da imagem </li>
+				</ul>
+			</p>
+		</div>
+	</div>
 
 	<div class="pure-g-r content-ribbon">
 		<div class="pure-u-1">
@@ -20,17 +33,15 @@
 			<img src="{{ image_cod }}" style="width: 700px;">
 			<br>
 
+<!-- 
 			<h2>Keypoints</h2>
-
 			{% for keypoint in keypoints %}
 				{{ keypoint.pt }}
 			{% endfor %}
-
-			<h2>Descriptors</h2>
-
 			{% for descriptor in descriptors %}
 				<p> {{ descriptor }} </p>
 			{% endfor %}
+ -->
 
 		</div>
 	</div>
