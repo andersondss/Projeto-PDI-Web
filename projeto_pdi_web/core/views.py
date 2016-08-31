@@ -1,10 +1,5 @@
-import os
-
 import cv2
-import Image
-import numpy as np
-from matplotlib import pyplot as plt
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.conf import settings
 import matplotlib.image as mpimg
 import scipy.misc
