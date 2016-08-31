@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 
 	<h2 class="content-subhead">Módulo de Segmentação (Módulo III)</h2>
@@ -48,11 +50,13 @@
 						<br>
 					{% endfor %}
 					<div class="pure-controls">
-						<button type="submit" class="pure-button pure-button-primary">Enviar</button>
+						<button type="submit" class="pure-button pure-button-primary" onclick="loading();">Enviar</button>
+						<div id="loading">
+							<img alt="" src="{% static 'img/loading.gif' %}">
+						</div>
 					</div>
 				</fieldset>
 			</form>
 		</div>
 	</div>
-
 {% endblock %}
