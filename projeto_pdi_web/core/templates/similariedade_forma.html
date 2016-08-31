@@ -2,13 +2,55 @@
 
 {% block content %}
 
-	<h2 class="content-subhead">Similariedade aqui</h2>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-		ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-		laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-		voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-		non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
+	<h2 class="content-subhead">Módulo de Similaridade entre Formas (Módulo IV)</h2>
+
+	<div class="my_input" style=" border: 3px solid #1f8dd6;">
+		<div class="inf_input" style="position: relative;margin-left: 25px;">
+			<p>
+				<strong>Entradas</strong>
+				<ul>
+					<li> Duas imagem digitais </li>
+				</ul>
+			</p>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="my_input" style=" border: 3px solid #1f8dd6;">
+		<div class="inf_input" style="position: relative;margin-left: 25px;">
+			<p>
+				<strong>Saídas</strong>
+				<ul>
+					<li> Imagens digitais de entrada </li>
+					<li> Imagem com o match dos descritores das imagens </li>
+					<li> Percentual de similaridade </li>
+				</ul>
+			</p>
+		</div>
+	</div>
+
+	<div class="pure-g-r content-ribbon">
+		<div class="pure-u-1">
+			<h2>Faça o upload da imagem</h2>
+			<form class="pure-form pure-form-stacked" action="{% url 'core:similarity' %}" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<fieldset>
+					{{ form.non_field_errors }}
+					{% for field in form %}
+						<div class="pure-control-group">
+							{{ field.label_tag }}
+							{{ field }}
+							{{ field.errors }}
+						</div>
+						<br>
+					{% endfor %}
+					<div class="pure-controls">
+						<button type="submit" class="pure-button pure-button-primary">Enviar</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
 
 {% endblock %}

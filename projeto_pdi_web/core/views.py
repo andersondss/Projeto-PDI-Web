@@ -13,7 +13,7 @@ from projeto_pdi_web.core.models import Codification, Segmentation, ShapeSimilar
 from projeto_pdi_web.core.forms import FormCodification, FormSegmentation, FormShapeSimilarity
 from projeto_pdi_web.common.lib_codification import run_orb
 from projeto_pdi_web.common.lib_segmentation import segmentation_slic
-from projeto_pdi_web.common.lib_similarity import shape_similarity
+from projeto_pdi_web.common.lib_similarity import get_shape_similarity
 
 
 def home(request):
@@ -86,9 +86,9 @@ def similarity(request):
         if form.is_valid():
             form = form.save()
             shape_similarity = ShapeSimilarity.objects.all().order_by('-id')[0]
-            first_img = mpimg.imread("{0}/{1}".format(settings.MEDIA_ROOT, shape_similarity.first_image.name))
-            second_img = mpimg.imread("{0}/{1}".format(settings.MEDIA_ROOT, shape_similarity.second_image.name))
-            match_images, rate_shape_similarity = shape_similarity()
+            first_img = cv2.imread("{0}/{1}".format(settings.MEDIA_ROOT, shape_similarity.first_image.name), 0)
+            second_img = cv2.imread("{0}/{1}".format(settings.MEDIA_ROOT, shape_similarity.second_image.name), 0)
+            match_images, rate_shape_similarity = get_shape_similarity(first_img, second_img)
             scipy.misc.imsave("{0}/{1}".format(settings.MEDIA_ROOT, "upload/similarity/shape/output/img_match.png"),
                               match_images)
             context["first_image"] = shape_similarity.first_image
@@ -97,7 +97,7 @@ def similarity(request):
             context["rate_shape_similarity"] = rate_shape_similarity
             return render(request, "similaridade_forma_sucesso.html", context)
     else:
-        form = FormSegmentation()
+        form = FormShapeSimilarity()
 
     context["form"] = form
     return render(request, template_name, context)

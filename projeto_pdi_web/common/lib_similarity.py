@@ -19,7 +19,7 @@ def _get_medoid(descritor):
     return indice, descritor[indice]
 
 
-def shape_similarity(first_image, second_image):
+def get_shape_similarity(first_image, second_image):
 
     orb = cv2.ORB_create()
     kp_1, descritores_1 = orb.detectAndCompute(first_image, None)

@@ -2,15 +2,14 @@
 
 {% block content %}
 
-	<h2 class="content-subhead">Módulo de Similaridade entre Formas (Módulo III)</h2>
+	<h2 class="content-subhead">Módulo de Similaridade entre Formas (Módulo IV)</h2>
 
 	<div class="my_input" style=" border: 3px solid #1f8dd6;">
 		<div class="inf_input" style="position: relative;margin-left: 25px;">
 			<p>
 				<strong>Entradas</strong>
 				<ul>
-					<li> Uma imagem digital </li>
-					<li> Conceito na imagem </li>
+					<li> Duas imagem digitais </li>
 				</ul>
 			</p>
 		</div>
@@ -23,10 +22,9 @@
 			<p>
 				<strong>Saídas</strong>
 				<ul>
-					<li> Imagem digital original </li>
-					<li> Imagem com os superpixels </li>
-					<li> Imagem segmentada </li>
-					<li> Máscara da segmentação </li>
+					<li> Imagens digitais de entrada </li>
+					<li> Imagem com o match dos descritores das imagens </li>
+					<li> Percentual de similaridade </li>
 				</ul>
 			</p>
 		</div>
@@ -36,20 +34,23 @@
 	
 		<div class="pure-u-1">
 
-			<h2>Imagem original</h2>
-			<img src="{{ image.url }}" style="width: 700px;">
+			<h2>Imagens de entrada</h2>
+			<img src="{{ first_image.url }}" style="width: 350px;">
+			<img src="{{ second_image.url }}" style="width: 350px;">
 
-			<h2>Imagem com superpixels</h2>
-			<img src="{{ img_superpixels }}" style="width: 700px;">
+			<h2>Match dos descritores das imagens</h2>
+			<img src="{{ img_match }}" style="width: 700px;">
 			<br>
-
-			<h2>Máscara da segmentação</h2>
-			<img src="{{ img_mask }}" style="width: 700px;">
-			<br>
-
-			<h2>Imagem segmentada</h2>
-			<img src="{{ img_seg }}" style="width: 700px;">
-			<br>
+			{% if rate_shape_similarity < 30 %}
+				<h2>Taxa de similaridade é de <strong style="color: #ea0808;">{{ rate_shape_similarity }}%</strong></h2>
+			{% elif rate_shape_similarity < 50 %}
+				<h2>Taxa de similaridade é de <strong style="color: #ea8a09;">{{ rate_shape_similarity }}%</strong></h2>
+			{% elif rate_shape_similarity < 80 %}
+				<h2>Taxa de similaridade é de <strong style="color: #a1c714;">{{ rate_shape_similarity }}%</strong></h2>
+			{% else %}
+				<h2>Taxa de similaridade é de <strong style="color: #38c71c;">{{ rate_shape_similarity }}%</strong></h2>
+			{% endif %}
+			
 
 		</div>
 
