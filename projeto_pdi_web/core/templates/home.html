@@ -2,9 +2,72 @@
 
 {% block content %}
 
-	<h2 class="content-subhead">Home aqui</h2>
-	<p>
-	    To use this layout, you can just copy paste the HTML, along with the CSS in <a href="/css/layouts/side-menu.css" alt="Side Menu CSS">side-menu.css</a>, and the JavaScript in <a href="/js/ui.js">ui.js</a>. The JS file uses vanilla JavaScript to simply toggle an <code>active</code> class that makes the menu responsive.
-	</p>
+	<h2 class="content-subhead">Módulo de Codificação (Módulo I)</h2>
+	<div class="my_input" style=" border: 3px solid #1f8dd6;">
+		<div class="inf_input" style="position: relative;margin-left: 25px;">
+			<p>
+				<strong>Entradas</strong>
+				<ul>
+					<li> Uma imagem digital </li>
+				</ul>
+			</p>
+		</div>
+		<div class="inf_input" style="position: relative;margin-left: 25px;">
+			<p>
+				<strong>Saídas</strong>
+				<ul>
+					<li> Keypoints da imagem </li>
+					<li> Descritores da imagem </li>
+				</ul>
+			</p>
+		</div>
+	</div>
+
+	<h2 class="content-subhead">Módulo de Segmentação (Módulo III)</h2>
+	<div class="my_input" style=" border: 3px solid #1f8dd6;">
+		<div class="inf_input" style="position: relative;margin-left: 25px;">
+			<p>
+				<strong>Entradas</strong>
+				<ul>
+					<li> Uma imagem digital </li>
+					<li> Conceito na imagem </li>
+				</ul>
+			</p>
+		</div>
+
+		<div class="inf_input" style="position: relative;margin-left: 25px;">
+			<p>
+				<strong>Saídas</strong>
+				<ul>
+					<li> Imagem digital original </li>
+					<li> Imagem com os superpixels </li>
+					<li> Imagem segmentada </li>
+					<li> Máscara da segmentação </li>
+				</ul>
+			</p>
+		</div>
+	</div>
+
+	<h2 class="content-subhead">Módulo de Similaridade entre Formas (Módulo IV)</h2>
+	<div class="my_input" style=" border: 3px solid #1f8dd6;">
+		<div class="inf_input" style="position: relative;margin-left: 25px;">
+			<p>
+				<strong>Entradas</strong>
+				<ul>
+					<li> Duas imagem digitais </li>
+				</ul>
+			</p>
+		</div>
+		<div class="inf_input" style="position: relative;margin-left: 25px;">
+			<p>
+				<strong>Saídas</strong>
+				<ul>
+					<li> Imagens digitais de entrada </li>
+					<li> Imagem com o match dos descritores das imagens </li>
+					<li> Percentual de similaridade </li>
+				</ul>
+			</p>
+		</div>
+	</div>
 
 {% endblock %}
