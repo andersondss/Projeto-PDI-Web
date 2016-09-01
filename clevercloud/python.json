@@ -1,5 +1,0 @@
-{
-	"deploy": {
-		"module":"projeto_pdi_web_wsgi"
-	}
-}
