@@ -66,9 +66,9 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pdi_mysql',
-        'USER': 'anderson',
-        'PASSWORD': 'pdi',
+        'NAME': 'mysql_pdi',
+        'USER': 'root',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
