@@ -66,10 +66,10 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql_pdi',
-        'USER': 'umbx693nkhxfvbbw',
-        'PASSWORD': 'AEBbK9Lde4yU8Icw0lh',
-        'HOST': 'bnbcpno8p-mysql.services.clever-cloud.com',
+        'NAME': 'pdi_mysql',
+        'USER': 'anderson',
+        'PASSWORD': 'pdi',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
