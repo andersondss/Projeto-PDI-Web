@@ -89,7 +89,7 @@ def similarity(request):
             context["first_image"] = shape_similarity.first_image
             context["second_image"] = shape_similarity.second_image
             context["img_match"] = "media/upload/similarity/shape/output/img_match.png"
-            context["rate_shape_similarity"] = rate_shape_similarity
+            context["rate_shape_similarity"] = ("%.2f" % rate_shape_similarity)
             return render(request, "similaridade_forma_sucesso.html", context)
     else:
         form = FormShapeSimilarity()
