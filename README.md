@@ -15,12 +15,12 @@ contém todo o contexto de PDI utilizado.
 
 ### SEGMENTAÇÃO
 
-![img_super](https://cloud.githubusercontent.com/assets/6972758/18228379/81198942-7221-11e6-8a9e-688e9c0984fe.png)
-
-![img_mask](https://cloud.githubusercontent.com/assets/6972758/18228375/80f4ae74-7221-11e6-89f1-42844d9aaded.png)
-
-![img_seg](https://cloud.githubusercontent.com/assets/6972758/18228376/80f621f0-7221-11e6-92b2-02191ee46804.png)
-
+<p align="center">
+  <strong>Screenshots</strong> 
+  <img style="width: 100px; height: 100px" src="https://cloud.githubusercontent.com/assets/6972758/18228379/81198942-7221-11e6-8a9e-688e9c0984fe.png">
+  <imgstyle="width: 50%; height: 50%" src="https://cloud.githubusercontent.com/assets/6972758/18228375/80f4ae74-7221-11e6-89f1-42844d9aaded.png">
+  <img style="width: 50%; height: 50%"  src="https://cloud.githubusercontent.com/assets/6972758/18228376/80f621f0-7221-11e6-92b2-02191ee46804.png">
+</p>
 
 ### SIMILARIDADE
 
