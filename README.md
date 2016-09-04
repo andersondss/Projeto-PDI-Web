@@ -6,7 +6,6 @@ de Pernambuco – Unidade Acadêmica de Garanhuns, no semestre 2015.2.
 Para as pessoas que estiverem mais interessadas na parte de PDI, [este repositório](https://github.com/andersondss/Projeto-PDI)
 contém todo o contexto de PDI utilizado.
 
-
 ## Screenshots
 
 ### CODIFICACAO
@@ -29,3 +28,17 @@ contém todo o contexto de PDI utilizado.
   <img src="https://cloud.githubusercontent.com/assets/6972758/18228380/811b5588-7221-11e6-9635-c100bc4daaad.png">
   <img src="https://cloud.githubusercontent.com/assets/6972758/18228481/aaf375de-7226-11e6-9ca4-bd917b7ec623.png">
 </p>
+
+
+## Dependências
+
+<ul>
+  <li> Django (1.6) </li>
+  <li> Pillow (2.3) </li>
+  <li> Matplotlib (1.3.1) </li>
+  <li> Numpy (1.11.1) </li>
+  <li> Scikit Image (0.9.3) </li>
+  <li> Scikit Learn (0.17.1) </li>
+  <li> Scipy (0.13.3) </li>
+</ul>
+
