@@ -39,14 +39,14 @@
 			<h2>Match dos descritores das imagens</h2>
 			<img src="{{ img_match }}" style="width: 700px;">
 			<br>
-			{% if rate_shape_similarity < 30 %}
-				<h2>Taxa de similaridade é de <strong style="color: #ea0808;">{{ rate_shape_similarity }}%</strong></h2>
-			{% elif rate_shape_similarity < 50 %}
-				<h2>Taxa de similaridade é de <strong style="color: #ea8a09;">{{ rate_shape_similarity }}%</strong></h2>
-			{% elif rate_shape_similarity < 80 %}
-				<h2>Taxa de similaridade é de <strong style="color: #a1c714;">{{ rate_shape_similarity }}%</strong></h2>
+			{% if rate_shape_similarity < 30.0 %}
+				<h2>Taxa de similaridade é de <strong style="color: #ea0808;">{{ rate_shape_similarity |floatformat:-2 }}%</strong></h2>
+			{% elif rate_shape_similarity < 50.0 %}
+				<h2>Taxa de similaridade é de <strong style="color: #ea8a09;">{{ rate_shape_similarity |floatformat:-2 }}%</strong></h2>
+			{% elif rate_shape_similarity < 80.0 %}
+				<h2>Taxa de similaridade é de <strong style="color: #a1c714;">{{ rate_shape_similarity |floatformat:-2 }}%</strong></h2>
 			{% else %}
-				<h2>Taxa de similaridade é de <strong style="color: #38c71c;">{{ rate_shape_similarity }}%</strong></h2>
+				<h2>Taxa de similaridade é de <strong style="color: #38c71c;">{{ rate_shape_similarity |floatformat:-2 }}%</strong></h2>
 			{% endif %}
 			
 
