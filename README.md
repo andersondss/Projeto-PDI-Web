@@ -6,24 +6,39 @@ de Pernambuco – Unidade Acadêmica de Garanhuns, no semestre 2015.2.
 Para as pessoas que estiverem mais interessadas na parte de PDI, [este repositório](https://github.com/andersondss/Projeto-PDI)
 contém todo o contexto de PDI utilizado.
 
-
 ## Screenshots
 
 ### CODIFICACAO
 
-![img_orb](https://cloud.githubusercontent.com/assets/6972758/18228378/80f8ead4-7221-11e6-96f5-d80b1a91bf93.png)
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/6972758/18228378/80f8ead4-7221-11e6-96f5-d80b1a91bf93.png">
+</p>
 
 ### SEGMENTAÇÃO
 
-![img_super](https://cloud.githubusercontent.com/assets/6972758/18228379/81198942-7221-11e6-8a9e-688e9c0984fe.png)
-
-![img_mask](https://cloud.githubusercontent.com/assets/6972758/18228375/80f4ae74-7221-11e6-89f1-42844d9aaded.png)
-
-![img_seg](https://cloud.githubusercontent.com/assets/6972758/18228376/80f621f0-7221-11e6-92b2-02191ee46804.png)
-
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/6972758/18228379/81198942-7221-11e6-8a9e-688e9c0984fe.png">
+  <img src="https://cloud.githubusercontent.com/assets/6972758/18228375/80f4ae74-7221-11e6-89f1-42844d9aaded.png">
+  <img src="https://cloud.githubusercontent.com/assets/6972758/18228376/80f621f0-7221-11e6-92b2-02191ee46804.png">
+</p>
 
 ### SIMILARIDADE
 
-![match_cows](https://cloud.githubusercontent.com/assets/6972758/18228380/811b5588-7221-11e6-9635-c100bc4daaad.png)
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/6972758/18228380/811b5588-7221-11e6-9635-c100bc4daaad.png">
+  <img src="https://cloud.githubusercontent.com/assets/6972758/18228481/aaf375de-7226-11e6-9ca4-bd917b7ec623.png">
+</p>
 
-![match_objs](https://cloud.githubusercontent.com/assets/6972758/18228431/2ca59420-7224-11e6-9eef-7ee6f69b1f7d.png)
+
+## Dependências
+
+<ul>
+  <li> Django (1.6) </li>
+  <li> Pillow (2.3) </li>
+  <li> Matplotlib (1.3.1) </li>
+  <li> Numpy (1.11.1) </li>
+  <li> Scikit Image (0.9.3) </li>
+  <li> Scikit Learn (0.17.1) </li>
+  <li> Scipy (0.13.3) </li>
+</ul>
+
