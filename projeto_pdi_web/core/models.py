@@ -23,9 +23,17 @@ class Segmentation(models.Model):
 
     concept_choice = (
         (0, "Gato"),
-        (1, "Cavalo"),
-        (2, "Avião")
+        (1, "Avião"),
+        (2, "Relógio"),
+        (3, "Moto"),
+        (4, "Carro"),
+        (5, "Cadeira"),
+        (6, "Cavalo"),
+        (7, "Gavião"),
+        (8, "Barco"),
+        (9, "Vaca"),
     )
+
     concept = models.IntegerField("Conceito", choices=concept_choice, default=0, blank=False)
     image = models.ImageField(upload_to="upload/segmentation/input/", verbose_name="Imagem", blank=False)
     # description = models.CharField("Descrição", max_length=50, blank=True)
