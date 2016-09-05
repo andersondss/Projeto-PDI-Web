@@ -26,7 +26,6 @@ def codification(request):
             codification = Codification.objects.all().order_by('-id')[0]
             img = cv2.imread("{0}/{1}".format(settings.MEDIA_ROOT, codification.image.name))
             kp, descriptors, img_keypoints = run_orb(img)
-            print "{0}/{1}".format(settings.MEDIA_ROOT, "upload/codification/output/img.png")
             cv2.imwrite("{0}/{1}".format(settings.MEDIA_ROOT, "upload/codification/output/img.png"),
                         img_keypoints)
             context["image"] = codification.image
