@@ -42,3 +42,5 @@ contém todo o contexto de PDI utilizado.
   <li> Scipy (0.13.3) </li>
 </ul>
 
+
+## Instalação
