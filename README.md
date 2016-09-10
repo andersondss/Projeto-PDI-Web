@@ -40,7 +40,14 @@ contém todo o contexto de PDI utilizado.
   <li> Scikit Image (0.9.3) </li>
   <li> Scikit Learn (0.17.1) </li>
   <li> Scipy (0.13.3) </li>
+  <li> OpenCV (3.0.0) </li>
 </ul>
 
 
 ## Instalação
+
+### OpenCV
+
+Neste [link](http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/)
+você encontrará uma descrição mais detalhada sobre a
+instalação do OpenCV.
