@@ -54,3 +54,4 @@ instalação do OpenCV.
 
 ### Projeto Django
 
+### Criação do Ambiente Virtual
