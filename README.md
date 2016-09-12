@@ -51,3 +51,6 @@ contém todo o contexto de PDI utilizado.
 Neste [link](http://www.pyimagesearch.com/2015/06/22/install-opencv-3-0-and-python-2-7-on-ubuntu/)
 você encontrará uma descrição mais detalhada sobre a
 instalação do OpenCV.
+
+### Projeto Django
+
